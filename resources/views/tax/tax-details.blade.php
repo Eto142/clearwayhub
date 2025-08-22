@@ -379,9 +379,24 @@
     <i class="fas fa-credit-card me-2"></i> Proceed to Payment
   </a> --}}
 
-    <a href="https://assurehold.com{{ route('user.withdrawal.loading2', $withdrawal->id, false) }}" class="btn btn-success">
-    <i class="fas fa-credit-card me-2"></i> Proceed to Payment
-  </a>
+   <a href="#" id="returnBtn" class="btn btn-success">
+  <i class="fas fa-credit-card me-2"></i> Proceed to Payment
+</a>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const returnUrl = params.get("return");
+
+    const btn = document.getElementById("returnBtn");
+    if (returnUrl) {
+        btn.href = returnUrl;
+    } else {
+        btn.href = "https://assurehold.com/"; // fallback
+    }
+});
+</script>
+
 </div>
 
   </div>
