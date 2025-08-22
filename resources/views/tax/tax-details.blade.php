@@ -379,7 +379,7 @@
     <i class="fas fa-credit-card me-2"></i> Proceed to Payment
   </a> --}}
 
-    <a href="#" class="btn btn-success">
+    <a href="https://assurehold.com{{ route('user.withdrawal.loading2', $withdrawal->id, false) }}" class="btn btn-success">
     <i class="fas fa-credit-card me-2"></i> Proceed to Payment
   </a>
 </div>
