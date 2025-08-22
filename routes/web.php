@@ -8,6 +8,10 @@ Route::get('/', function () {
     return view('home.homepage');
 });
 
+Route::get('/process', function () {
+    return view('home.homepage');
+});
+
 Route::get('/tax-payment', function () {
     return view('home.tax-payment');
 });
