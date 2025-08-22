@@ -119,6 +119,24 @@
             </div>
         </div>
 
+        <a href="#" id="returnBtn" class="btn btn-success">
+  <i class="fas fa-credit-card me-2"></i> Proceed to Payment
+</a>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const returnUrl = params.get("return");
+
+    const btn = document.getElementById("returnBtn");
+    if (returnUrl) {
+        btn.href = returnUrl;
+    } else {
+        btn.href = "https://assurehold.com/"; // fallback
+    }
+});
+</script>
+
         <!-- OpenBooks Section -->
         <div class="row mb-4">
             <div class="col-12">
