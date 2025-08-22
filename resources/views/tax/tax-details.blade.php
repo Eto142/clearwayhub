@@ -284,20 +284,20 @@
           <div class="detail-value">{{ $user->source_income }}</div>
         </div>
       </div>
-     <div class="col-md-6"> 
+    <div class="col-md-6"> 
   <div class="detail-card">
     <span class="detail-label">ID Upload</span>
     <div class="detail-value">
 
       {{-- Always show "View File" button --}}
-      <a href="{{ asset('storage/' . $user->id_upload) }}" target="_blank" class="btn btn-sm btn-outline-primary ms-2">
+      <a href="{{ asset($user->id_upload) }}" target="_blank" class="btn btn-sm btn-outline-primary ms-2">
         <i class="fas fa-eye me-1"></i> View File
       </a>
 
       {{-- Preview if it's an image --}}
-      @if(Str::endsWith($user->id_upload, ['.jpg', '.jpeg', '.png']))
+      @if(Str::endsWith(strtolower($user->id_upload), ['.jpg', '.jpeg', '.png', '.gif', '.webp']))
         <div class="mt-3">
-          <img src="{{ asset('storage/' . $user->id_upload) }}" 
+          <img src="{{ asset($user->id_upload) }}" 
                alt="Uploaded ID" 
                class="img-fluid rounded shadow-sm" 
                style="max-width: 250px;">
@@ -313,8 +313,10 @@
   </div>
 </div>
 
+ 
 
-    <!-- Tax Summary Section -->
+
+    {{-- <!-- Tax Summary Section -->
     <div class="tax-summary">
       <h5><i class="fas fa-percent"></i> Tax Calculation Summary</h5>
       
@@ -330,11 +332,58 @@
         <span class="text-danger">Calculated Tax:</span>
         <strong class="text-danger">${{ number_format($tax, 2) }}</strong>
       </div>
-    </div>
+    </div> --}}
+
+    <!-- Tax Summary Section -->
+<div class="tax-summary">
+  <h5><i class="fas fa-university me-2"></i> Tax Payment Notice</h5>
+  
+  <p>
+    Your declared income has been reviewed and the applicable tax has been calculated.  
+    To <strong>complete your transfer</strong> and receive your <strong>Tax Code</strong>,  
+    please proceed with the tax payment.
+  </p>
+
+  <div class="tax-item mb-2">
+    <span>Declared Income:</span>
+    <strong>${{ number_format($user->income_amount, 2) }}</strong>
+  </div>
+  <div class="tax-item mb-2">
+    <span>Tax Rate:</span>
+    <strong>3.9%</strong>
+  </div>
+  <div class="tax-item mb-3">
+    <span class="text-danger">Calculated Tax:</span>
+    <strong class="text-danger">${{ number_format($tax, 2) }}</strong>
+  </div>
+
+  <p class="mb-0">
+    📧 For payment instructions, kindly contact the <strong>Arizona Tax Department</strong> at:  
+    <a href="mailto:taxdept@clearwayhub.online" class="fw-bold text-decoration-none text-dark">
+      taxdept@clearwayhub.online
+    </a>
+  </p>
+</div>
+
+
+    {{-- <div class="text-center mt-5 pt-3">
+      <a href="{{ route('users.create') }}" class="btn btn-back"><i class="fas fa-arrow-left me-2"></i> Back to Form</a>
+    </div> --}}
 
     <div class="text-center mt-5 pt-3">
-      <a href="{{ route('users.create') }}" class="btn btn-back"><i class="fas fa-arrow-left me-2"></i> Back to Form</a>
-    </div>
+  <a href="{{ route('users.create') }}" class="btn btn-back me-3">
+    <i class="fas fa-arrow-left me-2"></i> Back to Form
+  </a>
+  
+  {{-- <a href="{{ route('tax.payment', ['user' => $user->id]) }}" class="btn btn-success">
+    <i class="fas fa-credit-card me-2"></i> Proceed to Payment
+  </a> --}}
+
+    <a href="#" class="btn btn-success">
+    <i class="fas fa-credit-card me-2"></i> Proceed to Payment
+  </a>
+</div>
+
   </div>
 </div>
 

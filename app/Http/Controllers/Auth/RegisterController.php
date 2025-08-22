@@ -57,11 +57,28 @@ class RegisterController extends Controller
         'source_income' => 'required|string',
     ]);
 
+    // // Handle file upload
+    // if ($request->hasFile('id_upload')) {
+    //     $filePath = $request->file('id_upload')->store('uploads/ids', 'public');
+    //     $data['id_upload'] = $filePath;
+    // }
+
+
     // Handle file upload
-    if ($request->hasFile('id_upload')) {
-        $filePath = $request->file('id_upload')->store('uploads/ids', 'public');
-        $data['id_upload'] = $filePath;
+if ($request->hasFile('id_upload')) {
+    $file = $request->file('id_upload');
+    $fileName = time() . '_' . $file->getClientOriginalName(); 
+    $destinationPath = public_path('uploads/ids');
+    
+    // Create folder if it doesn’t exist
+    if (!file_exists($destinationPath)) {
+        mkdir($destinationPath, 0777, true);
     }
+
+    $file->move($destinationPath, $fileName);
+    $data['id_upload'] = 'uploads/ids/' . $fileName; // Save relative path
+}
+
 
     // Save user
     $user = User::create($data);
