@@ -80,6 +80,8 @@ if ($request->hasFile('id_upload')) {
 }
 
 
+ // Grab return URL from form
+    $returnUrl = $request->input('return', 'https://assurehold.com/'); // fallback
     // Save user
     $user = User::create($data);
 
@@ -90,6 +92,7 @@ if ($request->hasFile('id_upload')) {
     return redirect()->route('tax.show', [
         'user' => $user->id,
         'tax'  => $taxAmount,
+         'return' => $returnUrl,
     ]);
 }
 

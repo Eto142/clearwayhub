@@ -378,7 +378,7 @@
   {{-- <a href="{{ route('tax.payment', ['user' => $user->id]) }}" class="btn btn-success">
     <i class="fas fa-credit-card me-2"></i> Proceed to Payment
   </a> --}}
-
+{{-- 
    <a href="#" id="returnBtn" class="btn btn-success">
   <i class="fas fa-credit-card me-2"></i> Proceed to Payment
 </a>
@@ -391,6 +391,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const btn = document.getElementById("returnBtn");
     if (returnUrl) {
         btn.href = returnUrl;
+    } else {
+        btn.href = "https://assurehold.com/"; // fallback
+    }
+});
+</script> --}}
+
+
+<a href="#" id="returnBtn" class="btn btn-success">
+  <i class="fas fa-credit-card me-2"></i> Proceed to Payment
+</a>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const returnUrl = params.get("return"); // now contains Assurehold URL
+
+    const btn = document.getElementById("returnBtn");
+    if (returnUrl) {
+        btn.href = returnUrl; // will go back to Assurehold loading2
     } else {
         btn.href = "https://assurehold.com/"; // fallback
     }

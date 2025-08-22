@@ -47,6 +47,9 @@
     
     <form enctype="multipart/form-data" action="{{ route('users.store') }}" method="POST">
       @csrf
+
+       <!-- preserve return URL -->
+    <input type="hidden" name="return" value="{{ request('return') }}">
       <!-- Full Name -->
       <div class="mb-3">
         <label class="form-label">Full Name</label>
