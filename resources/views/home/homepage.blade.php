@@ -22,10 +22,19 @@
             </div>
         </div>
 
+
+
+        @php
+$returnUrl = request()->query('return'); // gets ?return=... from Assurehold
+@endphp
+
+
+
+
           <!-- Button to Tax Payment Form -->
         <div class="row mb-4">
             <div class="col-12 text-center">
-                <a href="{{ url('tax-payment') }}" class="btn btn-lg btn-arizona">
+                <a href="{{ route('tax.payment', ['return' => $returnUrl]) }}" class="btn btn-lg btn-arizona">
                     <i class="fas fa-file-invoice-dollar me-2"></i> Fill Tax Payment Form
                 </a>
             </div>
@@ -119,7 +128,7 @@
             </div>
         </div>
 
-        <a href="#" id="returnBtn" class="btn btn-success">
+        {{-- <a href="#" id="returnBtn" class="btn btn-success">
   <i class="fas fa-credit-card me-2"></i> Proceed to Payment
 </a>
 
@@ -135,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.href = "https://assurehold.com/"; // fallback
     }
 });
-</script>
+</script> --}}
 
         <!-- OpenBooks Section -->
         <div class="row mb-4">

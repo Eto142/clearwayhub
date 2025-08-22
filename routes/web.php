@@ -19,10 +19,16 @@ Route::get('/process', function () {
 // });
 
 
-Route::get('/tax-payment', function (Request $request) { 
-    $returnUrl = $request->query('return'); // gets the "return" query parameter from the URL
-    return view('home.tax-payment', compact('returnUrl')); // passes it to Blade
-});
+// Route::get('/tax-payment', function (Request $request) { 
+//     $returnUrl = $request->query('return'); // gets the "return" query parameter from the URL
+//     return view('home.tax-payment', compact('returnUrl')); // passes it to Blade
+// });
+
+Route::get('/tax-payment', function (Request $request) {
+    $returnUrl = $request->query('return');
+    return view('home.tax-payment', compact('returnUrl'));
+})->name('tax.payment');
+
 
 
 
