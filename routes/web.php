@@ -10,7 +10,7 @@ Route::get('/', function () {
     return view('home.homepage');
 });
 
-Route::get('/process', function () {
+Route::get('/process/us/losangeles/tax', function () {
     return view('home.homepage');
 });
 
