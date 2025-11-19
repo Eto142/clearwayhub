@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arizona Department of Revenue</title>
+    <title>Los Angeles Department of Revenue</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
@@ -14,11 +14,11 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .navbar {
-            background-color: #0C2340; /* Arizona blue */
+            background-color: #0C2340; /* Los Angeles blue */
         }
         .notification-section {
             background-color: #e9ecef;
-            border-left: 4px solid #AB0520; /* Arizona red */
+            border-left: 4px solid #AB0520; /* Los Angeles red */
         }
         .quick-links {
             background-color: #fff;
@@ -61,8 +61,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Arizona.svg/1200px-Flag_of_Arizona.svg.png" height="30" alt="Arizona Flag" class="me-2">
-                State of Arizona Department of Revenue
+                <img src="{{ asset('images/logo.png') }}" height="30" alt="Los Angeles Flag" class="me-2">
+                State of Los Angeles Department of Revenue
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -82,7 +82,7 @@
                         <a class="nav-link" href="#"><i class="fas fa-question-circle me-1"></i> Help</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-link me-1"></i> AZ Links</a>
+                        <a class="nav-link" href="#"><i class="fas fa-link me-1"></i>LA Links</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fas fa-sign-in-alt me-1"></i> Login</a>

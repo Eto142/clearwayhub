@@ -12,10 +12,10 @@
                             <strong>License Closures</strong>: If your license is closed or canceled, you are still able to file missing returns or amend a return for any period prior to the closure/cancellation date.
                         </li>
                         <li class="list-group-item bg-transparent">
-                            <strong>Browser Compatibility</strong>: AZTaxes.gov only supports Internet Explorer 10 and 11, Google Chrome and Mozilla Firefox. Any other browsers used on this web application will have unexpected results.
+                            <strong>Browser Compatibility</strong>:LATaxes.gov only supports Internet Explorer 10 and 11, Google Chrome and Mozilla Firefox. Any other browsers used on this web application will have unexpected results.
                         </li>
                         <li class="list-group-item bg-transparent">
-                            <strong>Troubleshooting</strong>: If you are having issues with the site, try another browser, clear your internet history / cache, or edit your bookmark to the updated AZTaxes.
+                            <strong>Troubleshooting</strong>: If you are having issues with the site, try another browser, clear your internet history / cache, or edit your bookmark to the updatedLATaxes.
                         </li>
                     </ul>
                 </div>
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="col-12">
                 <div class="p-4 text-center quick-links">
                     <h3 class="text-primary"><i class="fas fa-book-open me-2"></i> OPENBOOKS OpenBooks.org</h3>
-                    <p class="lead">Arizona Official Transparency Website</p>
+                    <p class="lead">Los Angeles Official Transparency Website</p>
                     <a href="#" class="btn btn-lg btn-arizona">Visit OpenBooks</a>
                 </div>
             </div>
@@ -221,8 +221,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         <div class="col-md-4 mb-3">
                             <div class="card link-card h-100">
                                 <div class="card-body">
-                                    <h5 class="card-title"><i class="fas fa-id-card me-2"></i> Arizona Licensing Guide</h5>
-                                    <p class="card-text">Complete guide to Arizona business licensing</p>
+                                    <h5 class="card-title"><i class="fas fa-id-card me-2"></i> Los Angeles Licensing Guide</h5>
+                                    <p class="card-text">Complete guide to Los Angeles business licensing</p>
                                     <a href="#" class="btn btn-sm btn-outline-primary">Read Guide</a>
                                 </div>
                             </div>

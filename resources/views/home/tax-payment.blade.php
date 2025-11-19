@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arizona Tax Payment Form</title>
+  <title>Los Angeles Tax Payment Form</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -29,11 +29,11 @@
       padding-bottom: 10px;
       margin-bottom: 25px;
     }
-    .btn-arizona {
+    .btn-Los Angeles {
       background-color: #AB0520;
       color: white;
     }
-    .btn-arizona:hover {
+    .btn-Los Angeles:hover {
       background-color: #8a0319;
       color: white;
     }
@@ -144,7 +144,7 @@
 
       <!-- Submit -->
       <div class="text-center mt-4">
-        <button type="submit" class="btn btn-arizona btn-lg">
+        <button type="submit" class="btn btn-Los Angeles btn-lg">
           <i class="fas fa-paper-plane me-2"></i> Submit Tax Information
         </button>
       </div>

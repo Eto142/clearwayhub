@@ -3,8 +3,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h5>State of Arizona Department of Revenue</h5>
-                    <p>Providing service and information to Arizona taxpayers</p>
+                    <h5>State of Los Angeles Department of Revenue</h5>
+                    <p>Providing service and information to Los Angeles taxpayers</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <p>https://www.aztaxes.gov/Home/Page</p>
