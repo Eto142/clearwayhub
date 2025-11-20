@@ -17,10 +17,20 @@
                                 G
                             </div>
                         </td>
-                        <td style="vertical-align: middle; color: #ffffff;">
-                            <div style="font-size: 18px; font-weight: bold; letter-spacing: 1px;">CLEARWAY<span style="color:#ffd700;">HUB</span></div>
-                            <div style="font-size: 12px; letter-spacing: 0.5px;"></div>
-                        </td>
+                       <td style="vertical-align: middle; color: #ffffff; padding-left: 10px;">
+
+    <!-- Company Logo -->
+    <img src="https:///clearwayhub.online/logo.png" 
+         alt="ClearwayHub Logo" 
+         style="max-width: 140px; height: auto; display: block;">
+
+    <!-- Optional tagline under logo (you can remove if not needed) -->
+    <div style="font-size: 12px; color: #dfe7f3; letter-spacing: 0.5px; margin-top: 3px;">
+        <!-- Tagline here if you want -->
+    </div>
+
+</td>
+
                     </tr>
                 </table>
             </div>
