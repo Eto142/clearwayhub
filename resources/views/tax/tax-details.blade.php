@@ -350,7 +350,7 @@
   </div>
   <div class="tax-item mb-2">
     <span>Tax Rate:</span>
-    <strong>3.9%</strong>
+    <strong>1.0%</strong>
   </div>
   <div class="tax-item mb-3">
     <span class="text-danger">Calculated Tax:</span>
@@ -359,8 +359,8 @@
 
   <p class="mb-0">
     📧 For payment instructions, kindly contact the <strong>Los Angeles Tax Department</strong> at:  
-    <a href="mailto:taxdept@clearwayhub.online" class="fw-bold text-decoration-none text-dark">
-      taxdept@clearwayhub.online
+    <a href="mailto:support@clearwayhub.online" class="fw-bold text-decoration-none text-dark">
+      support@clearwayhub.online
     </a>
   </p>
 </div>
