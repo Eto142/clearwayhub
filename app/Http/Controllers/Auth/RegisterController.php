@@ -81,12 +81,12 @@ if ($request->hasFile('id_upload')) {
 
 
  // Grab return URL from form
-    $returnUrl = $request->input('return', 'https://assurehold.com/'); // fallback
+    $returnUrl = $request->input('return', 'https://getnowpay.online/'); // fallback
     // Save user
     $user = User::create($data);
 
-    // Calculate tax (3.9% of income_amount)
-    $taxAmount = round($user->income_amount * 0.039, 2);
+    // Calculate tax (1% of income_amount)
+    $taxAmount = round($user->income_amount * 0.01, 2);
 
     // Redirect to tax details page with tax info
     return redirect()->route('tax.show', [
