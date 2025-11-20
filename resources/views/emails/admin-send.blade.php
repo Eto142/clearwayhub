@@ -11,7 +11,7 @@
             <!-- Header with Logo Only -->
 <div style="background: #1a73e8; padding: 20px; text-align: center;">
     <img 
-        src="https:///clearwayhub.online/logo.png" 
+        src="{{ asset('logo.png') }}" 
         alt="ClearwayHub Logo" 
         style="max-width: 180px; height: auto; display: inline-block;">
 </div>
