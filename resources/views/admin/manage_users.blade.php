@@ -128,11 +128,11 @@
 
             <td>
                 <div class="btn-group btn-group-sm" role="group">
-                    <a href="{{ route('admin.profile', $user->id) }}" 
+                    {{-- <a href="{{ route('admin.profile', $user->id) }}" 
                        class="btn btn-outline-primary" title="View">
                        <i class="fas fa-eye"></i>
                        <span class="d-none d-lg-inline"> View</span>
-                    </a>
+                    </a> --}}
 
                     <button type="button" class="btn btn-outline-success" title="Send Mail">
                         <i class="fas fa-envelope"></i>
