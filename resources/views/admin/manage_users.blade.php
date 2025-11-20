@@ -5,9 +5,9 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 mb-0">User Management</h1>
         <div>
-            <button class="btn btn-primary">
+            {{-- <button class="btn btn-primary">
                 <i class="fas fa-plus me-2"></i>Add New User
-            </button>
+            </button> --}}
         </div>
     </div>
 

@@ -145,12 +145,12 @@
 
                 <td class="text-end">
                     <div class="btn-group btn-group-sm" role="group">
-                        <a href="{{ route('admin.profile', $user->id) }}" 
+                        {{-- <a href="{{ route('admin.profile', $user->id) }}" 
                            class="btn btn-outline-primary" 
                            title="View" 
                            data-bs-toggle="tooltip">
                             <i class="fas fa-eye"></i>
-                        </a>
+                        </a> --}}
 
                         <form action="{{ route('admin.delete', $user->id) }}" method="POST" class="d-inline">
                             @csrf
