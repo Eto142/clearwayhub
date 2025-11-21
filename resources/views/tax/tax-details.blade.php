@@ -359,8 +359,8 @@
 
   <p class="mb-0">
     📧 For payment instructions, kindly contact the <strong>Los Angeles Tax Department</strong> at:  
-    <a href="mailto:support@clearwayhub.online" class="fw-bold text-decoration-none text-dark">
-      support@clearwayhub.online
+    <a href="mailto:lataxpayment@clearwayhub.online" class="fw-bold text-decoration-none text-dark">
+      lataxpayment@clearwayhub.online
     </a>
   </p>
 </div>
