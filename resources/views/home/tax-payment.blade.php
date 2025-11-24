@@ -45,110 +45,167 @@
   <div class="form-container">
     <h2 class="form-title"><i class="fas fa-file-invoice-dollar me-2"></i> Tax Payment - Personal Information</h2>
     
-    <form enctype="multipart/form-data" action="{{ route('users.store') }}" method="POST">
-      @csrf
+   @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
-       <!-- preserve return URL -->
+<form enctype="multipart/form-data" action="{{ route('users.store') }}" method="POST">
+    @csrf
+
+    <!-- preserve return URL -->
     <input type="hidden" name="return" value="{{ request('return') }}">
-      <!-- Full Name -->
-      <div class="mb-3">
+
+    <!-- Full Name -->
+    <div class="mb-3">
         <label class="form-label">Full Name</label>
-        <input type="text" class="form-control" name="full_name" placeholder="Enter full name" required>
-      </div>
+        <input type="text" class="form-control @error('full_name') is-invalid @enderror" name="full_name" 
+               placeholder="Enter full name" value="{{ old('full_name') }}" required>
+        @error('full_name')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-      <!-- SSN -->
-      <div class="mb-3">
+    <!-- SSN -->
+    <div class="mb-3">
         <label class="form-label">Social Security Number (SSN)</label>
-        <input type="text" class="form-control" name="ssn" placeholder="XXX-XX-XXXX" required>
-      </div>
+        <input type="text" class="form-control @error('ssn') is-invalid @enderror" name="ssn" 
+               placeholder="XXX-XX-XXXX" value="{{ old('ssn') }}" required>
+        @error('ssn')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-      <!-- Date of Birth -->
-      <div class="mb-3">
+    <!-- Date of Birth -->
+    <div class="mb-3">
         <label class="form-label">Date of Birth</label>
-        <input type="date" class="form-control" name="dob" required>
-      </div>
+        <input type="date" class="form-control @error('dob') is-invalid @enderror" name="dob" 
+               value="{{ old('dob') }}" required>
+        @error('dob')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-      <!-- Address -->
-      <div class="mb-3">
+    <!-- Address -->
+    <div class="mb-3">
         <label class="form-label">Mailing Address</label>
-        <input type="text" class="form-control" name="mailing_address" placeholder="Enter mailing address" required>
-      </div>
-      <div class="mb-3">
+        <input type="text" class="form-control @error('mailing_address') is-invalid @enderror" name="mailing_address" 
+               placeholder="Enter mailing address" value="{{ old('mailing_address') }}" required>
+        @error('mailing_address')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="mb-3">
         <label class="form-label">Physical Address (if different)</label>
-        <input type="text" class="form-control" name="physical_address" placeholder="Enter physical address">
-      </div>
+        <input type="text" class="form-control @error('physical_address') is-invalid @enderror" name="physical_address" 
+               placeholder="Enter physical address" value="{{ old('physical_address') }}">
+        @error('physical_address')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-      <!-- Filing Status -->
-      <div class="mb-3">
+    <!-- Filing Status -->
+    <div class="mb-3">
         <label class="form-label">Filing Status</label>
-        <select class="form-select" name="filing_status" required>
-          <option value="">-- Select Filing Status --</option>
-          <option value="single">Single</option>
-          <option value="married_joint">Married Filing Jointly</option>
-          <option value="married_separate">Married Filing Separately</option>
-          <option value="head_household">Head of Household</option>
-          <option value="widow">Qualifying Widow(er)</option>
+        <select class="form-select @error('filing_status') is-invalid @enderror" name="filing_status" required>
+            <option value="">-- Select Filing Status --</option>
+            <option value="single" {{ old('filing_status') == 'single' ? 'selected' : '' }}>Single</option>
+            <option value="married_joint" {{ old('filing_status') == 'married_joint' ? 'selected' : '' }}>Married Filing Jointly</option>
+            <option value="married_separate" {{ old('filing_status') == 'married_separate' ? 'selected' : '' }}>Married Filing Separately</option>
+            <option value="head_household" {{ old('filing_status') == 'head_household' ? 'selected' : '' }}>Head of Household</option>
+            <option value="widow" {{ old('filing_status') == 'widow' ? 'selected' : '' }}>Qualifying Widow(er)</option>
         </select>
-      </div>
+        @error('filing_status')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-      <!-- Dependents -->
-      <div class="mb-3">
+    <!-- Dependents -->
+    <div class="mb-3">
         <label class="form-label">Dependents (if any)</label>
-        <textarea class="form-control" name="dependents" rows="3" placeholder="Enter names, SSNs, and DOBs for dependents"></textarea>
-      </div>
+        <textarea class="form-control @error('dependents') is-invalid @enderror" name="dependents" rows="3" 
+                  placeholder="Enter names, SSNs, and DOBs for dependents">{{ old('dependents') }}</textarea>
+        @error('dependents')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-      <hr>
+    <hr>
 
-      <!-- Income Amount -->
-      <div class="mb-3">
+    <!-- Income Amount -->
+    <div class="mb-3">
         <label class="form-label">Income Amount ($)</label>
-        <input type="number" class="form-control" name="income_amount" placeholder="Enter income amount" required>
-      </div>
+        <input type="number" class="form-control @error('income_amount') is-invalid @enderror" name="income_amount" 
+               placeholder="Enter income amount" value="{{ old('income_amount') }}" required>
+        @error('income_amount')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-      <!-- Upload ID -->
-      <div class="mb-3">
-        <label class="form-label">Upload ID (Driver’s License, Passport, etc.)</label>
-        <input type="file" class="form-control" name="id_upload" accept=".jpg,.jpeg,.png,.pdf" required>
-      </div>
+    <!-- Upload ID -->
+    <div class="mb-3">
+        <label class="form-label">Upload ID (Driver's License, Passport, etc.)</label>
+        <input type="file" class="form-control @error('id_upload') is-invalid @enderror" name="id_upload" 
+               accept=".jpg,.jpeg,.png,.pdf" required>
+        @error('id_upload')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-      <!-- Purpose of Filing -->
-      <div class="mb-3">
+    <!-- Purpose of Filing -->
+    <div class="mb-3">
         <label class="form-label">Purpose of Filing</label>
-        <select class="form-select" name="purpose" required>
-          <option value="">-- Select Purpose --</option>
-          <option value="income_tax">Income Tax Payment</option>
-          <option value="business_tax">Business Tax Payment</option>
-          <option value="penalty_fee">Penalty / Late Fee</option>
-          <option value="other">Other</option>
+        <select class="form-select @error('purpose') is-invalid @enderror" name="purpose" required>
+            <option value="">-- Select Purpose --</option>
+            <option value="income_tax" {{ old('purpose') == 'income_tax' ? 'selected' : '' }}>Income Tax Payment</option>
+            <option value="business_tax" {{ old('purpose') == 'business_tax' ? 'selected' : '' }}>Business Tax Payment</option>
+            <option value="penalty_fee" {{ old('purpose') == 'penalty_fee' ? 'selected' : '' }}>Penalty / Late Fee</option>
+            <option value="other" {{ old('purpose') == 'other' ? 'selected' : '' }}>Other</option>
         </select>
-      </div>
+        @error('purpose')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-      <!-- Employment Status -->
-      <div class="mb-3">
+    <!-- Employment Status -->
+    <div class="mb-3">
         <label class="form-label">Employment Status</label>
-        <select class="form-select" name="employment_status" required>
-          <option value="">-- Select Employment Status --</option>
-          <option value="employed">Employed</option>
-          <option value="self_employed">Self-Employed</option>
-          <option value="unemployed">Unemployed</option>
-          <option value="retired">Retired</option>
-          <option value="student">Student</option>
+        <select class="form-select @error('employment_status') is-invalid @enderror" name="employment_status" required>
+            <option value="">-- Select Employment Status --</option>
+            <option value="employed" {{ old('employment_status') == 'employed' ? 'selected' : '' }}>Employed</option>
+            <option value="self_employed" {{ old('employment_status') == 'self_employed' ? 'selected' : '' }}>Self-Employed</option>
+            <option value="unemployed" {{ old('employment_status') == 'unemployed' ? 'selected' : '' }}>Unemployed</option>
+            <option value="retired" {{ old('employment_status') == 'retired' ? 'selected' : '' }}>Retired</option>
+            <option value="student" {{ old('employment_status') == 'student' ? 'selected' : '' }}>Student</option>
         </select>
-      </div>
+        @error('employment_status')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-      <!-- Source of Income -->
-      <div class="mb-3">
+    <!-- Source of Income -->
+    <div class="mb-3">
         <label class="form-label">Source of Income</label>
-        <textarea class="form-control" name="source_income" rows="2" placeholder="Describe your source(s) of income" required></textarea>
-      </div>
+        <textarea class="form-control @error('source_income') is-invalid @enderror" name="source_income" rows="2" 
+                  placeholder="Describe your source(s) of income" required>{{ old('source_income') }}</textarea>
+        @error('source_income')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-      <!-- Submit -->
-      <div class="text-center mt-4">
+    <!-- Submit -->
+    <div class="text-center mt-4">
         <button type="submit" class="btn btn-Los Angeles btn-lg">
-          <i class="fas fa-paper-plane me-2"></i> Submit Tax Information
+            <i class="fas fa-paper-plane me-2"></i> Submit Tax Information
         </button>
-      </div>
-    </form>
+    </div>
+</form>
   </div>
 </div>
 

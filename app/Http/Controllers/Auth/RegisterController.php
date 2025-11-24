@@ -51,7 +51,7 @@ class RegisterController extends Controller
         'filing_status' => 'required|string',
         'dependents' => 'nullable|string',
         'income_amount' => 'required|numeric|min:0',
-        'id_upload' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
+        'id_upload' => 'required|file|mimes:jpg,jpeg,png,pdf|max:20000',
         'purpose' => 'required|string',
         'employment_status' => 'required|string',
         'source_income' => 'required|string',
